@@ -1,0 +1,33 @@
+"""CircuitPython Essentials NeoPixel example"""
+import time
+import board
+import neopixel
+
+pixel_pin = board.A2
+num_pixels = 10
+
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=.01, pixel_order= neopixel.Rgbw, auto_write=False)
+
+
+
+RED = (255, 0, 0)
+YELLOW = (255, 150, 0)
+GREEN = (0, 255, 0)
+CYAN = (0, 255, 255)
+BLUE = (0, 0, 255)
+PURPLE = (180, 0, 255)
+
+while True:
+   pixels[0] = RED
+   pixels[1] = BLUE
+   pixels[2] = GREEN
+   pixels[3] = CYAN
+   pixels[4] = BLUE
+   pixels[5] = YELLOW
+   pixels[6] = CYAN
+   pixels[7] = RED
+
+
+   pixels.show()
+   time.sleep(1)
+
